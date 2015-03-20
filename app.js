@@ -4,9 +4,10 @@ var http = require('http');
 var app = express();
 app.get('/', function (req, res){
 
-  res.send('Welcome to my super nice nodejs app on port ' + app.address().port);
+  res.send('Welcome to my super nice nodejs app on port ' + server.address().port);
 });
 
-http.createServer(app).listen(3000, function(){
-  console.log('Express server listening on port 3000' );
+var server = http.createServer(app);
+server.listen(3000, function(){
+  console.log('Express server listening on port ' + server.address().port );
 });
