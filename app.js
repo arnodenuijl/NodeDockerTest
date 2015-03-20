@@ -3,8 +3,8 @@ var http = require('http');
 
 var app = express();
 app.get('/', function (req, res){
-  console.log('woehoe' );  
-  res.send('Welcome to my super nice nodejs app');
+
+  res.send('Welcome to my super nice nodejs app on port ' + app.address().port);
 });
 
 http.createServer(app).listen(3000, function(){
